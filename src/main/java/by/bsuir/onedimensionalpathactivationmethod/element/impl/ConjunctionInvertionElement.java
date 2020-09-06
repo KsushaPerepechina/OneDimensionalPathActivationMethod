@@ -4,18 +4,19 @@ package by.bsuir.onedimensionalpathactivationmethod.element.impl;
 import by.bsuir.onedimensionalpathactivationmethod.element.CombinationalCircuitElement;
 import by.bsuir.onedimensionalpathactivationmethod.element.ComputingElement;
 
-import java.util.Set;
+import java.util.List;
 
 public class ConjunctionInvertionElement extends ComputingElement {
 
-    public ConjunctionInvertionElement(Set<CombinationalCircuitElement> previousElements) {
+    public ConjunctionInvertionElement(List<CombinationalCircuitElement> previousElements) {
         super(previousElements);
     }
 
-    public boolean process(boolean... input) {
+    @Override
+    public boolean compute() {
         boolean output = true;
-        for (boolean x: input) {
-            output = output && x;
+        for (CombinationalCircuitElement element: super.getPreviousElements()) {
+            output = output && element.compute();
         }
         return !output;
     }

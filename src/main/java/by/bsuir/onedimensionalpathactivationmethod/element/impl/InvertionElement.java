@@ -3,16 +3,17 @@ package by.bsuir.onedimensionalpathactivationmethod.element.impl;
 import by.bsuir.onedimensionalpathactivationmethod.element.CombinationalCircuitElement;
 import by.bsuir.onedimensionalpathactivationmethod.element.ComputingElement;
 
-import java.util.Set;
+import java.util.List;
 
 public class InvertionElement extends ComputingElement {
 
-    public InvertionElement(Set<CombinationalCircuitElement> previousElements) {
+    public InvertionElement(List<CombinationalCircuitElement> previousElements) {
         super(previousElements);
     }
 
-    public boolean process(boolean... input) {
-        return !input[0];
+    @Override
+    public boolean compute() {
+        return !getPreviousElements().get(0).compute();
     }
 
 }

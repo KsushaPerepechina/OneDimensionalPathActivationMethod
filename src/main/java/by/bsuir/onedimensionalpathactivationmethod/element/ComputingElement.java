@@ -1,13 +1,14 @@
 package by.bsuir.onedimensionalpathactivationmethod.element;
 
-import java.util.Set;
+
+import java.util.List;
 
 public abstract class ComputingElement implements CombinationalCircuitElement {
 
-    private Set<CombinationalCircuitElement> previousElements;
+    private List<CombinationalCircuitElement> previousElements;
     private CombinationalCircuitElement subsequentElement;
 
-    public ComputingElement(Set<CombinationalCircuitElement> previousElements) {
+    public ComputingElement(List<CombinationalCircuitElement> previousElements) {
         this.previousElements = previousElements;
     }
 
@@ -19,6 +20,12 @@ public abstract class ComputingElement implements CombinationalCircuitElement {
         this.subsequentElement = subsequentElement;
     }
 
-    public abstract boolean process(boolean ... input);
+    public List<CombinationalCircuitElement> getPreviousElements() {
+        return previousElements;
+    }
+
+    public void setPreviousElements(List<CombinationalCircuitElement> previousElements) {
+        this.previousElements = previousElements;
+    }
 
 }
