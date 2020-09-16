@@ -1,7 +1,5 @@
-package by.bsuir.onedimensionalpathactivationmethod.element;
+package by.bsuir.onedimensionalpathactivationmethod.circuit.element;
 
 public interface CombinationalCircuitElement {
-
     boolean compute();
-
 }
