@@ -2,16 +2,17 @@ package by.bsuir.onedimensionalpathactivationmethod.circuit.element.impl;
 
 
 import by.bsuir.onedimensionalpathactivationmethod.circuit.element.CombinationalCircuitElement;
-import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.util.List;
 
 public abstract class ComputingElement implements CombinationalCircuitElement {
     private List<CombinationalCircuitElement> previousElements;
     private ComputingElement subsequentElement;
+    private int number;
 
-    public ComputingElement(List<CombinationalCircuitElement> previousElements) {
+    public ComputingElement(List<CombinationalCircuitElement> previousElements, int number) {
         this.previousElements = previousElements;
+        this.number = number;
     }
 
     public ComputingElement getSubsequentElement() {
@@ -26,20 +27,11 @@ public abstract class ComputingElement implements CombinationalCircuitElement {
         return previousElements;
     }
 
-    public void setPreviousElements(List<CombinationalCircuitElement> previousElements) {
-        this.previousElements = previousElements;
-    }
-
     public abstract boolean getFaultCondition();
 
     public abstract boolean getPathActivityCondition();
 
-    //TODO delete
-    @Override
-    public String toString() {
-        return new ToStringBuilder(this)
-                .append("previousElements: ", previousElements)
-                .append("subsequentElement: ", subsequentElement)
-                .toString();
+    public int getNumber() {
+        return number;
     }
 }

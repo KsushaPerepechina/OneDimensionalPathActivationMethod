@@ -8,8 +8,8 @@ public class ConjunctionElement extends ComputingElement {
     private static final boolean FAULT_CONDITION = true;
     private static final boolean PATH_ACTIVITY_CONDITION = true;
 
-    public ConjunctionElement(List<CombinationalCircuitElement> previousElements) {
-        super(previousElements);
+    public ConjunctionElement(List<CombinationalCircuitElement> previousElements, int elementNumber) {
+        super(previousElements, elementNumber);
     }
 
     @Override

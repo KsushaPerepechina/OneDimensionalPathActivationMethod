@@ -8,9 +8,10 @@ public class DisjunctionInvertionElement extends ComputingElement {
     private static final boolean FAULT_CONDITION = false;
     private static final boolean PATH_ACTIVITY_CONDITION = false;
 
-    public DisjunctionInvertionElement(List<CombinationalCircuitElement> previousElements) {
-        super(previousElements);
+    public DisjunctionInvertionElement(List<CombinationalCircuitElement> previousElements, int elementNumber) {
+        super(previousElements, elementNumber);
     }
+
 
     @Override
     public boolean compute() {

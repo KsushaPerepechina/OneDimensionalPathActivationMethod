@@ -2,7 +2,7 @@ package by.bsuir.onedimensionalpathactivationmethod.runner;
 
 import by.bsuir.onedimensionalpathactivationmethod.circuit.CombinationalCircuit;
 import by.bsuir.onedimensionalpathactivationmethod.config.CombinationalCircuitConfigurer;
-import by.bsuir.onedimensionalpathactivationmethod.tester.TestBuilder;
+import by.bsuir.onedimensionalpathactivationmethod.tester.CircuitTestBuilder;
 
 public class Main {
 
@@ -12,7 +12,7 @@ public class Main {
         CombinationalCircuitConfigurer configurer = new CombinationalCircuitConfigurer();
         configurer.configCircuit(combinationalCircuit);
 
-        TestBuilder testBuilder = new TestBuilder();
-        testBuilder.buildAllTests(combinationalCircuit);
+        CircuitTestBuilder circuitTestBuilder = new CircuitTestBuilder(combinationalCircuit);
+        circuitTestBuilder.execute();
     }
 }

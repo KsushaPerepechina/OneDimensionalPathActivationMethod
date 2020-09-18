@@ -18,12 +18,4 @@ public class WireElement implements CombinationalCircuitElement {
     public boolean compute() {
         return value;
     }
-
-    //TODO delete
-    @Override
-    public String toString() {
-        return new ToStringBuilder(this)
-                .append("value", value)
-                .toString();
-    }
 }

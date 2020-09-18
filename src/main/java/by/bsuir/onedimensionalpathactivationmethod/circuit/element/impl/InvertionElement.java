@@ -7,9 +7,10 @@ import java.util.List;
 public class InvertionElement extends ComputingElement {
     private static final boolean FAULT_CONDITION = false;
 
-    public InvertionElement(List<CombinationalCircuitElement> previousElements) {
-        super(previousElements);
+    public InvertionElement(List<CombinationalCircuitElement> previousElements, int elementNumber) {
+        super(previousElements, elementNumber);
     }
+
 
     @Override
     public boolean compute() {

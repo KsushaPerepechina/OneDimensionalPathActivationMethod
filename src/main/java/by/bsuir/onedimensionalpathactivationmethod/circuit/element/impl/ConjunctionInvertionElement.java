@@ -8,8 +8,8 @@ public class ConjunctionInvertionElement extends ComputingElement {
     private static final boolean FAULT_CONDITION = false;
     private static final boolean PATH_ACTIVITY_CONDITION = true;
 
-    public ConjunctionInvertionElement(List<CombinationalCircuitElement> previousElements) {
-        super(previousElements);
+    public ConjunctionInvertionElement(List<CombinationalCircuitElement> previousElements, int elementNumber) {
+        super(previousElements, elementNumber);
     }
 
     @Override
